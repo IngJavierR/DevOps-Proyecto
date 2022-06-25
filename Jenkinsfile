@@ -44,6 +44,11 @@ pipeline {
                     sh 'mvn gatling:test -Dgatling.simulationClass=microservice.PingUsersSimulation'
                 }
             }
+            post {
+                always {
+                    gatlingArchive()
+                }
+            }
         }
     }
 }

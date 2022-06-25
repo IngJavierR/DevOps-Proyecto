@@ -12,7 +12,7 @@
             <column name="DS_NAME" type="VARCHAR(50)">
                 <constraints nullable="true" primaryKey="false" unique="false"/>
             </column>
-            <column name="DS_LASTNAMESSSS" type="VARCHAR(50)">
+            <column name="DS_LASTNAME" type="VARCHAR(50)">
                 <constraints nullable="true" primaryKey="false" unique="false"/>
             </column>
             <column name="AGE" type="INT">

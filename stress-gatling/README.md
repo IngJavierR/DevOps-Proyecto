@@ -20,7 +20,7 @@ Install Maven:
 To test it out, simply execute the following command:
 
 ```bash
-    $mvn gatling:test -Dgatling.simulationClass=microservice.PingUsersSimulation
+    $mvn gatling:test -Dgatling.simulationClass=microservice.SagaSimulation
     $mvn gatling:test -Dgatling.simulationClass=microservice.SaveUserSimulation
     $mvn gatling:test -Dgatling.simulationClass=microservice.LoginSimulation
 ```

@@ -23,7 +23,6 @@ pipeline {
             steps {
                 dir("Servicios/Curso-Microservicios"){
                     sh "java --version"
-                    sh "java -v"
                     sh "mvn clean package \
                             -Djacoco.output=tcpclient \
                             -Djacoco.address=127.0.0.1 \

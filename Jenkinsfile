@@ -7,13 +7,15 @@ pipeline {
 
         stage ('OWASP Dependency-Check Vulnerabilities') {
             steps {
-                dependencyCheck additionalArguments: ''' 
-                    -o "./" 
-                    -s "./"
-                    -f "ALL" 
-                    --prettyPrint''', odcInstallation: 'dependency_check_7_2_0'
+                dir("Servicios/Curso-Microservicios"){
+                    dependencyCheck additionalArguments: ''' 
+                        -o "./" 
+                        -s "./"
+                        -f "ALL" 
+                        --prettyPrint''', odcInstallation: 'dependency_check_7_2_0'
 
-                dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+                    dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+                }
             }
         }  
 

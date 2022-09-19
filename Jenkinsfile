@@ -22,8 +22,8 @@ pipeline {
         stage('Compile') {
             steps {
                 dir("Servicios/Curso-Microservicios"){
-                    withSonarQubeEnv('SonarServer') {
-                        sh "mvn clean package"
+                    sh "mvn clean package"
+                    //withSonarQubeEnv('SonarServer') {
                     //     sh "mvn clean package \
                     //         -Dsonar.projectKey=21_MyCompany_Microservice \
                     //         -Dsonar.projectName=21_MyCompany_Microservice \
@@ -33,7 +33,7 @@ pipeline {
                     //         -Djacoco.output=tcpclient \
                     //         -Djacoco.address=127.0.0.1 \
                     //         -Djacoco.port=10001"
-                    }
+                    //}
                 }
             }
         }

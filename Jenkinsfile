@@ -23,11 +23,11 @@ pipeline {
             steps {
                 dir("Servicios/Curso-Microservicios"){
                     withSonarQubeEnv('SonarServer') {
-                        sh "mvn clean package \
+                        sh "mvn clean package sonar:sonar \
                             -Dsonar.projectKey=21_MyCompany_Microservice \
                             -Dsonar.projectName=21_MyCompany_Microservice \
                             -Dsonar.sources=src/main \
-                            -Dsonar.coverage.exclusions=**/*TO.java,**/*DO.java,**/microservicio-web/**/*,**/microservicio-persistence/**/*,**/microservicio-commons/**/*,**/microservicio-model/**/* \
+                            -Dsonar.coverage.exclusions=**/*TO.java,**/*DO.java,**/example/web/**/*,**/example/persistence/**/*,**/example/commons/**/*,**/example/model/**/* \
                             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
                             -Djacoco.output=tcpclient \
                             -Djacoco.address=127.0.0.1 \

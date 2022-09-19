@@ -27,7 +27,7 @@ pipeline {
                             -Dsonar.projectKey=21_MyCompany_Microservice \
                             -Dsonar.projectName=21_MyCompany_Microservice \
                             -Dsonar.sources=src/main \
-                            -Dsonar.coverage.exclusions=**/*TO.java,**/*DO.java,**/curso/web/**/*,**/curso/persistence/**/*,**/curso/commons/**/*,**/curso/model/**/* \
+                            -Dsonar.coverage.exclusions=**/*TO.java,**/*DO.java,**/microservicio-web/**/*,**/microservicio-persistence/**/*,**/microservicio-commons/**/*,**/microservicio-model/**/* \
                             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
                             -Djacoco.output=tcpclient \
                             -Djacoco.address=127.0.0.1 \

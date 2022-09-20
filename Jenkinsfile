@@ -23,10 +23,7 @@ pipeline {
             steps {
                 dir("Servicios/Curso-Microservicios"){
                     sh "mvn clean test"
-                    sh "mvn package \
-                        -Djacoco.output=tcpclient \
-                        -Djacoco.address=127.0.0.1 \
-                        -Djacoco.port=10001"
+                    sh "mvn package -DskipTests"
                     //withSonarQubeEnv('SonarServer') {
                     //     sh "mvn clean package \
                     //         -Dsonar.projectKey=21_MyCompany_Microservice \

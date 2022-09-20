@@ -22,7 +22,8 @@ pipeline {
         stage('Compile') {
             steps {
                 dir("Servicios/Curso-Microservicios"){
-                    sh "mvn clean test package \
+                    sh "mvn clean test"
+                    sh "mvn package \
                         -Djacoco.output=tcpclient \
                         -Djacoco.address=127.0.0.1 \
                         -Djacoco.port=10001"

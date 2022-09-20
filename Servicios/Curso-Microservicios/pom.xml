@@ -158,9 +158,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration combine.self="override">
-                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                    <testFailureIgnore>true</testFailureIgnore>
-                        <groups>com.project.test.annotation.QuickTest</groups>
+                    <argLine>${argLine} -Xmx4096m -XX:MaxPermSize=512M ${itCoverageAgent}</argLine>
                 </configuration>
             </plugin>
             <plugin>

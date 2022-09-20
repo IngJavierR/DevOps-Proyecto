@@ -24,9 +24,7 @@ pipeline {
                 dir("Servicios/Curso-Microservicios"){
                     sh "java --version"
                     sh "mvn clean package \
-                            -Djacoco.output=tcpclient \
-                            -Djacoco.address=localhost \
-                            -Djacoco.port=10001"
+                            -Djacoco.output=file"
                     //withSonarQubeEnv('SonarServer') {
                     //     sh "mvn clean package \
                     //         -Dsonar.projectKey=21_MyCompany_Microservice \

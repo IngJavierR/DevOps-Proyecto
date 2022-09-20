@@ -22,7 +22,6 @@ pipeline {
         stage('Compile') {
             steps {
                 dir("Servicios/Curso-Microservicios"){
-                    sh "java --version"
                     sh "mvn clean test"
                     //withSonarQubeEnv('SonarServer') {
                     //     sh "mvn clean package \

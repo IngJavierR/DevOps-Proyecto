@@ -32,6 +32,7 @@
         <postgressql.version>42.2.2</postgressql.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.surefire.plugin.version>3.0.0-M1</maven.surefire.plugin.version>
         <jacoco.version>0.8.4</jacoco.version>
         <lombok.version>1.18.8</lombok.version>
         <sonar.dependencyCheck.htmlReportPath>${project.basedir}/dependency-check-report.html</sonar.dependencyCheck.htmlReportPath>
@@ -152,6 +153,16 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+                <configuration combine.self="override">
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                    <testFailureIgnore>true</testFailureIgnore>
+                        <groups>com.project.test.annotation.QuickTest</groups>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>

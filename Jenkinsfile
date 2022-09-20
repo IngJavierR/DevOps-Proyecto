@@ -24,7 +24,7 @@ pipeline {
                 dir("Servicios/Curso-Microservicios"){
                     //sh "mvn -X clean test -DskipTests"
                     withSonarQubeEnv('SonarServer') {
-                        sh "mvn clean package \
+                        sh "mvn clean test \
                             -Dsonar.projectKey=21_MyCompany_Microservice \
                             -Dsonar.projectName=21_MyCompany_Microservice"
                     }

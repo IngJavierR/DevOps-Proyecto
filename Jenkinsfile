@@ -25,7 +25,7 @@ pipeline {
                     sh "java --version"
                     sh "mvn clean package \
                             -Djacoco.output=tcpclient \
-                            -Djacoco.address=127.0.0.1 \
+                            -Djacoco.address=localhost \
                             -Djacoco.port=10001"
                     //withSonarQubeEnv('SonarServer') {
                     //     sh "mvn clean package \

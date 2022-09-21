@@ -22,10 +22,10 @@ pipeline {
         stage('Compile') {
             steps {
                 dir("Servicios/Curso-Microservicios"){
-                    sh "mvn clean test"
-                    // withSonarQubeEnv('SonarServer') {
-                    //     sh "mvn clean test sonar:sonar"
-                    // }
+                    //sh "mvn clean test"
+                    withSonarQubeEnv('SonarServer') {
+                        sh "mvn clean test"
+                    }
                     //sh "mvn package -DskipTests"
                     //withSonarQubeEnv('SonarServer') {
                     //     sh "mvn clean package \

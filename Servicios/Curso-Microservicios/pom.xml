@@ -180,9 +180,9 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
-                        <configuration>
+                        <!-- <configuration>
                             <outputDirectory>${project.basedir}/target/site/jacoco</outputDirectory>
-                        </configuration>
+                        </configuration> -->
                     </execution>
                 </executions>
             </plugin>

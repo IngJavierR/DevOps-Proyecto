@@ -45,8 +45,6 @@
             **/example/commons/**/*,
             **/example/model/**/*
         </sonar.coverage.exclusions>
-        <sonar.projectKey>21_MyCompany_Microservice</sonar.projectKey>
-        <!-- <sonar.projectName>21_MyCompany_Microservice</sonar.projectName> -->
         <sonar.sources>src/main</sonar.sources>
         <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <sonar.language>java</sonar.language>
@@ -177,13 +175,13 @@
                     </execution>
                     <execution>
                         <id>report</id>
-                        <phase>test</phase>
+                        <phase>prepare-agent</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
-                        <!-- <configuration>
+                        <configuration>
                             <outputDirectory>${project.basedir}/target/site/jacoco</outputDirectory>
-                        </configuration> -->
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

@@ -22,22 +22,17 @@ pipeline {
         stage('Compile') {
             steps {
                 dir("Servicios/Curso-Microservicios"){
-                    //sh "mvn clean test"
                     withSonarQubeEnv('SonarServer') {
-                        sh "mvn clean test sonar:sonar"
+                        sh "mvn clean package \
+                            -Dsonar.projectKey=21_MyCompany_Microservice \
+                            -Dsonar.projectName=21_MyCompany_Microservice \
+                            -Dsonar.sources=src/main \
+                            -Dsonar.coverage.exclusions=**/*TO.java,**/*DO.java,**/example/web/**/*,**/example/persistence/**/*,**/example/commons/**/*,**/example/model/**/* \
+                            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+                            -Djacoco.output=tcpclient \
+                            -Djacoco.address=127.0.0.1 \
+                            -Djacoco.port=10001"
                     }
-                    //sh "mvn package -DskipTests"
-                    //withSonarQubeEnv('SonarServer') {
-                    //     sh "mvn clean package \
-                    //         -Dsonar.projectKey=21_MyCompany_Microservice \
-                    //         -Dsonar.projectName=21_MyCompany_Microservice \
-                    //         -Dsonar.sources=src/main \
-                    //         -Dsonar.coverage.exclusions=**/*TO.java,**/*DO.java,**/example/web/**/*,**/example/persistence/**/*,**/example/commons/**/*,**/example/model/**/* \
-                    //         -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
-                    //         -Djacoco.output=tcpclient \
-                    //         -Djacoco.address=127.0.0.1 \
-                    //         -Djacoco.port=10001"
-                    //}
                 }
             }
         }

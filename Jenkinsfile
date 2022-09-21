@@ -24,7 +24,7 @@ pipeline {
                 dir("Servicios/Curso-Microservicios"){
                     //sh "mvn clean test"
                     withSonarQubeEnv('SonarServer') {
-                        sh "mvn clean test"
+                        sh "mvn clean test sonar:sonar"
                     }
                     //sh "mvn package -DskipTests"
                     //withSonarQubeEnv('SonarServer') {
